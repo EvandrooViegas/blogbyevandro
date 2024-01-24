@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Bem-vin ao Blog by Evandro",
-  description: "Melhor blog sobre produtos",
+  description: "O seu blog preferido sobre produtos",
 };
 
 export default function RootLayout({
