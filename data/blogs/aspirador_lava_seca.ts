@@ -1,4 +1,5 @@
-import { categories } from "../categories";
+import { iBlog } from "@/types/iBlog";
+import { categories, getCategory } from "../categories";
 
 export default {
   title: "Melhor aspirador que Espira Lava e Seca para comprar em 2024",
@@ -6,15 +7,12 @@ export default {
   date: "1/23/2024",
   banner:
     "https://cdn.bissell.it/catalog/d/d/8/0/dd8098484b41b30a3ab9ab55b1e97b954867b350_3555N_CrossWave_C3_Pro_Hero_Formula__1_.jpg",
-  category: categories.homeAppliances,
+  category: getCategory("Eletrodomêsticos"),
 
   body: [
     {
       title: "Tecnologia de Dois Tanques para Limpeza Impecável:",
       text: "O BISSELL CrossWave C3 Pro é equipado com um sistema de dois tanques, garantindo que a água limpa e a fórmula de limpeza se mantenham separadas da água suja. Com capacidades específicas para cada função, você pode confiar que a limpeza será sempre realizada com água limpa, resultando em pisos brilhantes e impecáveis.",
-      image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYJIsbAveLG_wt5on0bgTsTq73QiP00TrAe7rw1FyNWBYWvPez-gVLedf3ITkKPfTwAUI&usqp=CAU",
-      imagePos: "left",
     },
     {
       title: "Versatilidade para Todas as Superfícies:",
@@ -25,7 +23,6 @@ export default {
       text: "O recurso de autolimpeza automática é um verdadeiro diferencial, eliminando sujeira, cabelo e detritos da escova giratória com o simples toque de um botão. Minimize a limpeza pós-uso e mantenha o desempenho do seu limpador sempre impecável.",
       image:
         "https://m.media-amazon.com/images/S/aplus-media-library-service-media/b33c2d07-9eb5-4f53-bddf-88c080ba1f85.__CR0,0,600,450_PT0_SX300_V1___.jpg",
-      imagePos: "bottom",
     },
     {
       title: "Gestão de Odores Inovadora:",
@@ -35,7 +32,6 @@ export default {
       title: "Solução de Limpeza Natural Inclusa:",
       text: "Acompanhando o BISSELL CrossWave C3 Pro, você recebe uma solução de limpeza natural de 1 litro, proporcionando resultados de limpeza ainda melhores. Uma base natural para uma limpeza eficaz e amiga do ambiente.",
       image: "https://m.media-amazon.com/images/I/81jugvjSiLL._AC_SX679_.jpg",
-      imagePos: "right",
     },
     {
       title: "Acessórios Específicos para Resultados Ótimos:",
@@ -46,4 +42,4 @@ export default {
       text: `Explore a seção "Guias e Documentos do Produto" para baixar o manual completo do usuário. Familiarize-se com todas as funcionalidades do seu BISSELL CrossWave C3 Pro e otimize a limpeza da sua casa.`,
     },
   ],
-};
+} satisfies iBlog

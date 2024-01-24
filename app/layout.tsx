@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,12 +18,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={` flex flex-col gap-20 justify-between ${inter.className}`}>
         <Navbar />
-        <div className="pt-16">
+        <div className="mt-20 min-h-screen">
         {children}
 
         </div>
+        <Footer />
       </body>
     </html>
   );

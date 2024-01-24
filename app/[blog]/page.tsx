@@ -1,3 +1,4 @@
+import Badge from "@/components/Badge";
 import Section from "@/components/Section";
 import blogs, { getBlog } from "@/data";
 import React from "react";
@@ -7,17 +8,22 @@ export default function page({ params }: { params: { blog: string } }) {
   if (!content) return "Não foi possível encontrar o blog solicitado";
   return (
     <Section>
-      <div className="grid grid-cols-[4fr_1fr]">
-        <div className="p-10 min-h-screen border-r space-y-12">
-          <div>
-            <span>Publicado em {content.date}</span>
+        <div className="p-10 min-h-screen border-r  space-y-24">
+          <div className="space-y-6">
+    <div className="flex justify-between ">
+    <span className="font-semibold font-mono text-zinc-700">Publicado em {content.date}</span>
+    <Badge>{content.category?.name}</Badge>
+
+
+
+    </div>
             <img
               src={content?.banner}
               className="max-h-[55vh] w-full rounded object-cover"
             />
-            <span className="text-7xl font-extrabold text-zinc-800  space-y-4">
+            <h3 className="text-7xl font-extrabold text-zinc-800 ">
               {content?.title}
-            </span>
+            </h3>
           </div>
           <div>
             Índice:
@@ -25,7 +31,7 @@ export default function page({ params }: { params: { blog: string } }) {
               {content.body.map((section) => (
                 <ul key={section.title}>
                   <li className="font-semibold text-2xl hover:underline">
-                    <a href={`/#${section.title}`}>- {section.title}</a>
+                    <a href={`#${section.title}`}>- {section.title}</a>
                   </li>
                 </ul>
               ))}
@@ -33,22 +39,24 @@ export default function page({ params }: { params: { blog: string } }) {
           </div>
           <div>
             Conteúdo:
-            <div className="flex flex-col gap-12">
+            <div className="flex flex-col gap-8">
               {content.body.map((section) => (
                 <section id={section.title} key={section.title}>
                   <h3 className="text-2xl font-semibold mb-4">{section.title}</h3>
 
-                  <div className={section.image ?  `flex  gap-12 ${section.imagePos === 'left' ? 'flex-row-reverse' : '' }` : ''}>
+                  <div className={section.image ?  `flex flex-col  gap-12 ` : ''}>
                     <p className="text-xl">{section.text}</p>
-                    <img src={section.image} className="w-full max-w-[400px] object-cover rounded"  />
+                {section.image && (
+                    <img src={section.image} className="w-full max-w-[600px] aspect-video object-cover rounded"  />
+
+                )}
                   </div>
                 </section>
               ))}
             </div>
           </div>
         </div>
-        <div className="p-10">aaa</div>
-      </div>
+
     </Section>
   );
 }
