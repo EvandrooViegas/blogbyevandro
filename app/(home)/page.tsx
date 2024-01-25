@@ -27,17 +27,17 @@ export default function page() {
           <span className="text-primary">BLOG BY EVANDRO</span>
         </p>
       </Section>
-      <HomeSection id="Recentes" className="grid grid-cols-3" title="Recentes" subtitle="Os blogs mais recentes">
+      <HomeSection id="Recentes" className="grid md:grid-cols-3 grid-cols-1" title="Recentes" subtitle="Os blogs mais recentes">
         {recents.map((blog) => (
           <BlogCard blog={blog} key={blog.title} />
         ))}
       </HomeSection>
-      <HomeSection id="Blogs" className="grid grid-cols-3" title="Blogs" subtitle="Lista de todos os blogs">
+      <HomeSection id="Blogs" className="grid md:grid-cols-3 grid-cols-1" title="Blogs" subtitle="Lista de todos os blogs">
         {blogs.map((blog) => (
           <BlogCard blog={blog} key={blog.title} />
         ))}
       </HomeSection>
-      <HomeSection id="Recentes" className="grid grid-cols-3" title="Categorias" subtitle="Todas as categorias">
+      <HomeSection id="Recentes" className="grid md:grid-cols-3 grid-cols-1" title="Categorias" subtitle="Todas as categorias">
         {categories.map((category) => (
           <div key={category.name} className="flex flex-col gap-4 items-center">
             <img className="w-full h-[300px] rounded" src={category.image}  />
